@@ -23,6 +23,11 @@
     <script>
         function gerarNomeCompleto(){
           var inputNome =  document.getElementById("nome")
+          if(inputNome.value == ''){
+             alert("Informe nome")
+             inputNome.focus()
+             return
+          }
 
           var inputSobreNome =  document.getElementById("sobreNome")
 
