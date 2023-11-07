@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 10
+        console.log(x)
+        x = "10"
+        console.log(x)
+        x = {nome:"maria", idade:15}
+        console.log(x)
+
+        /*função nomeada*/
+        function soma(n1, n2){
+            console.log(n1 + n2)
+        }
+
+        soma(70,30)
+
+        /*função anonima*/
+        const y = function(n1, n2){
+            console.log(n1 + n2)
+        }
+        console.log(y)
+        y(200,50)
+
+        /*arrow function*/
+        const z = (n1,n2) => console.log(n1 + n2)
+        z(300,150)
+
+        const divide = (n1, n2) => {
+            if(n2 == 0){
+                alert("Não é possivel dividir por Zero")
+                return
+            }
+            console.log(n1/n2)
+        }
+        divide(10,2)
+    </script>
+</body>
+</html>
