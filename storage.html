@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="escreverNoStorage()">Escrever</button>
+    <button onclick="lerNoStorage()">ler</button>
+
+    <hr>
+    <p></p>
+    <script>
+        function escreverNoStorage(){
+            localStorage.setItem('user','maria@gmail.com')
+        }
+
+        function lerNoStorage(){
+          document.getElementsByTagName("p")[0].innerHTML = localStorage.getItem('user')
+        }
+    </script>
+</body>
+</html>
