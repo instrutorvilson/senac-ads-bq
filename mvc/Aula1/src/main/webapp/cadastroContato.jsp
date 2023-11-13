@@ -14,7 +14,7 @@
 <body>
 <div class="container">
         <%@ include file="./menu.jsp" %>
-	    <hr>
+	    
 		<h1 class="text-center mt-5 mb-5">Cadastrar Contatos</h1>
 		<form action="recebeDados.jsp" method="POST">
 			<div>
