@@ -1,3 +1,6 @@
+<%@page import="models.Contato"%>
+<%@page import="java.util.List"%>
+<%@page import="controllers.ContatoController"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +29,19 @@
             </thead>
             <tbody>
                <!-- preenche de forma dinamica -->
-               <tr>
+               <%
+                   ContatoController cc = new ContatoController(); 
+                   List<Contato> contatos = cc.getContatos();
+                   String linhas = "";
+                   for(int i = 0; i < contatos.size(); i++){
+                	  Contato ct = contatos.get(i); 
+                	  linhas += "<tr><td>"+ct.getId()+"</td><td>"+ct.getNome()+"</td><td>"+ct.getEmail()+"</td></tr>";
+                   }
+                   out.print(linhas);
+               %>
+             
+             <!--    
+             <tr>
                    <td>1</td>
                    <td>Maria</td>
                    <td>maria@gmail.com</td>
@@ -43,7 +58,8 @@
                    <td>joao</td>
                    <td>joao@gmail.com</td>
                    <td><a href="#">Editar</a> <a href="#">Excluir</a> </td>
-               </tr>
+               </tr> 
+               -->
             </tbody>
          </table>
     </div>
