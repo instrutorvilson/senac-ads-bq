@@ -1,3 +1,4 @@
+<%@page import="utils.Conexao"%>
 <%@page import="models.Contato"%>
 <%@page import="java.util.List"%>
 <%@page import="controllers.ContatoController"%>
@@ -38,6 +39,11 @@
                 	  linhas += "<tr><td>"+ct.getId()+"</td><td>"+ct.getNome()+"</td><td>"+ct.getEmail()+"</td></tr>";
                    }
                    out.print(linhas);
+               %>
+               <%
+                  if(Conexao.conectar() != null){
+                	  out.print("conectao");
+                  }
                %>
              
              <!--    
