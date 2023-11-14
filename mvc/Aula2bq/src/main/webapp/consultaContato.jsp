@@ -39,12 +39,7 @@
                 	  linhas += "<tr><td>"+ct.getId()+"</td><td>"+ct.getNome()+"</td><td>"+ct.getEmail()+"</td></tr>";
                    }
                    out.print(linhas);
-               %>
-               <%
-                  if(Conexao.conectar() != null){
-                	  out.print("conectao");
-                  }
-               %>
+               %>          
              
              <!--    
              <tr>

@@ -5,7 +5,7 @@
 <%
   String nome = request.getParameter("nome");
   String email = request.getParameter("email");
-  out.print(nome + " " + email);
+  /*out.print(nome + " " + email);*/
   
   Contato ct = new Contato();
   ct.setNome(nome);
