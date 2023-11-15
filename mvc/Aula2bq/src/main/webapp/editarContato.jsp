@@ -24,7 +24,7 @@
         %>
 	    
 		<h1 class="text-center mt-5 mb-5">Editar Contato</h1>
-		<form action="recebeDados.jsp" method="POST">
+		<form action="recebeDadosEditar.jsp?" method="POST">
 		    <div>
 				<label class="form-label">ID</label> <input
 					class="form-control" type="text" readonly="readonly"

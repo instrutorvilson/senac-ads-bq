@@ -36,6 +36,25 @@ public class ContatoController {
     	return contato;
 	}
 	
+	public boolean alterar(Contato ct) {
+    	Connection con = Conexao.conectar();
+    	String sql = "update tb_contatos set nome = ?, email = ? where id = ?";
+    	try {
+			PreparedStatement stm = con.prepareStatement(sql);
+			stm.setString(1, ct.getNome());
+			stm.setString(2, ct.getEmail());
+			stm.setInt(3, ct.getId());
+			stm.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;			
+		}
+    	finally {
+			Conexao.fechar();
+		}
+    	return true;
+    }
+	
     public boolean salvar(Contato ct) {
     	Connection con = Conexao.conectar();
     	String sql = "insert into tb_contatos(nome, email)values(?,?)";
