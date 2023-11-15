@@ -20,6 +20,22 @@ public class ContatoController {
 		contatos.add(new Contato(4, "joao", "joao@gmail.com"));*/
 	}
 	
+	public Contato consultarByID(int id) {
+		Connection con = Conexao.conectar();
+		Contato contato = null;
+    	try {
+			PreparedStatement stm = con.prepareStatement("select * from tb_contatos where id = ?");
+			stm.setInt(1, id);
+			ResultSet rs = stm.executeQuery();
+			if(rs.next()) {
+				contato = new Contato(rs.getInt("id"),rs.getString("nome"),rs.getString("email"));				
+			}
+		} catch (SQLException e) {
+		   e.printStackTrace();
+		}
+    	return contato;
+	}
+	
     public boolean salvar(Contato ct) {
     	Connection con = Conexao.conectar();
     	String sql = "insert into tb_contatos(nome, email)values(?,?)";
@@ -49,6 +65,9 @@ public class ContatoController {
 			}
 		} catch (SQLException e) {
 		   e.printStackTrace();
+		}
+    	finally {
+			Conexao.fechar();
 		}
     	
     	return contatos;

@@ -36,7 +36,8 @@
                    String linhas = "";
                    for(int i = 0; i < contatos.size(); i++){
                 	  Contato ct = contatos.get(i); 
-                	  linhas += "<tr><td>"+ct.getId()+"</td><td>"+ct.getNome()+"</td><td>"+ct.getEmail()+"</td></tr>";
+                	  linhas += "<tr><td>"+ct.getId()+"</td><td>"+ct.getNome()+"</td><td>"+ct.getEmail()+"</td>";
+                	  linhas += "<td><a href='./editarContato.jsp?id="+ct.getId()+"'>editar</a></td></tr>";
                    }
                    out.print(linhas);
                %>          
