@@ -1,0 +1,7 @@
+Desafio
+> Criar o controller de Categoria
+  Atributos: id, nome, status
+
+Endpoints
+-> POST, GET, DELETE, PUT
+-> Ativar/desativar categoria
