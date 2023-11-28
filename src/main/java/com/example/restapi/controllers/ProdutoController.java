@@ -91,7 +91,7 @@ public class ProdutoController {
 	}
 	
 	@GetMapping("/{idProduto}")
-	public ResponseEntity<Produto> getProduto(@PathVariable("idProduto") int id) {
+	public ResponseEntity<Produto> getProduto(@PathVariable("idProduto") Long id) {
 		Produto prod = null;
 		for(Produto pr : produtos) {
 			if(pr.getId() == id) {
@@ -106,7 +106,7 @@ public class ProdutoController {
 	}
 	
 	@DeleteMapping("/{idProduto}")
-	public ResponseEntity<Produto> excluirProduto(@PathVariable("idProduto") int id) {
+	public ResponseEntity<Produto> excluirProduto(@PathVariable("idProduto") Long id) {
 		Produto prod = null;
 		for(Produto pr : produtos) {
 			if(pr.getId() == id) {
@@ -123,7 +123,7 @@ public class ProdutoController {
 	}
 	
 	@PutMapping("/{idProduto}")
-	public ResponseEntity<Produto> alterarProduto(@PathVariable("idProduto") int id, @RequestBody Produto produto ) {
+	public ResponseEntity<Produto> alterarProduto(@PathVariable("idProduto") Long id, @RequestBody Produto produto ) {
 		Produto prod = null;
 		for(Produto pr : produtos) {
 			if(pr.getId() == id) {
@@ -143,7 +143,7 @@ public class ProdutoController {
 	
 	@PostMapping
 	public ResponseEntity<Produto> salvarProduto(@RequestBody Produto produto) {
-		produto.setId(produtos.size()+1);
+		produto.setId(produtos.size()+1l);
 		produtos.add(produto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(produto);
 	}
