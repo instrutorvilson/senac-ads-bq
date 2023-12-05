@@ -1,4 +1,5 @@
 import Cadastro from './componentes/cadastro';
+import Consulta from './componentes/consulta';
 import Lista from './componentes/lista';
 import Pai from './componentes/pai';
 import VerIdade from './componentes/verIdade';
@@ -8,9 +9,10 @@ function App() {
     <div className="container">
        { /*<Cadastro />  
         <Lista />
-        <VerIdade />   
+        <VerIdade /> 
+        <Pai />  
         */  } 
-        <Pai />
+        <Consulta />
     </div>
   );
 }
