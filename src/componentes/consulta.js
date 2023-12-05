@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import CardProduto from "./cardProduto"
 
 export default function Consulta(){
     const[produtos, setProdutos] = useState([])
@@ -14,7 +15,7 @@ export default function Consulta(){
         <div>
             <h1>Consulta de produtos</h1>
             {
-                produtos.map(prod => <p>{prod.descricao}</p>)
+                produtos.map(prod => <CardProduto produto={prod}/>)
             }
         </div>
     )
