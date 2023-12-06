@@ -12,7 +12,7 @@ export default function Consulta(){
     useEffect( ()=>{consultar()},[])
 
     return(
-        <div>
+        <div className="d-flex flex-wrap  ">
             <h1>Consulta de produtos</h1>
             {
                 produtos.map(prod => <CardProduto produto={prod}/>)

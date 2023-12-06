@@ -9,12 +9,13 @@ export default function CardProduto({ produto }) {
         .catch((error)=> alert(error))
     }
     return (
-        <div className="col-sm-3 m-4">
-            <h1>produto: {produto.id} </h1>
-            <p>Descrição: {produto.descricao}</p>
-            <p>Estoque: {produto.estoque}</p>
-            <p>Valor R$: {produto.valorUnitario}</p>
-            <p>Categoria: {produto.categoria?.descricao}</p>
+        <div className="card col-sm-3 m-3 p-3">
+            <h3 className="text-center">Produto: {produto.id} </h3>
+            <hr />
+            <p><b>Descrição:</b>  {produto.descricao}</p>
+            <p><b>Estoque:</b> {produto.estoque}</p>
+            <p><b>Valor R$:</b> {produto.valorUnitario}</p>
+            <p><b>Categoria:</b>  {produto.categoria?.descricao}</p>
             <div className="d-flex justify-content-between">
                 <button className="btn btn-primary">Editar</button>
                 <button 
