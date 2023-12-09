@@ -1,11 +1,17 @@
+import { Link, useNavigate } from 'react-router-dom'
 export default function CardProduto({ produto }) {
+    const navigate = useNavigate()
+
     function excluir(){
         fetch(`http://localhost:8080/produtos/${produto.id}`,
         {
             method:'DELETE'
         }
         )
-        .then(data => alert('Produto excluido com sucesso'))
+        .then(data => {
+            alert('Produto excluido com sucesso')
+            navigate('/')
+        })
         .catch((error)=> alert(error))
     }
     return (
@@ -17,7 +23,7 @@ export default function CardProduto({ produto }) {
             <p><b>Valor R$:</b> {produto.valorUnitario}</p>
             <p><b>Categoria:</b>  {produto.categoria?.descricao}</p>
             <div className="d-flex justify-content-between">
-                <button className="btn btn-primary">Editar</button>
+               <Link to={`/produto/editar/${produto.id}`}><button className="btn btn-primary">Editar</button></Link> 
                 <button 
                    className="btn btn-danger"
                    onClick={excluir}

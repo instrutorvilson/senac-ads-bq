@@ -1,20 +1,15 @@
-import Cadastro from './componentes/cadastro';
-import Consulta from './componentes/consulta';
-import Lista from './componentes/lista';
-import Pai from './componentes/pai';
-import Produto from './componentes/produto';
-import VerIdade from './componentes/verIdade';
+import {Link, Outlet} from 'react-router-dom'
 
 function App() {
   return (
     <div className="container">
-       { /*<Cadastro />  
-        <Lista />
-        <VerIdade /> 
-        <Pai />  
-        */  } 
-        <Produto />
-        <Consulta />
+        <nav>
+           <Link to='/produto/cadastrar'>Cadastro</Link> &nbsp;&nbsp;
+           <Link to='/produto/consultar'>Consulta</Link>
+        </nav>
+        <main>
+           <Outlet />
+        </main>
     </div>
   );
 }

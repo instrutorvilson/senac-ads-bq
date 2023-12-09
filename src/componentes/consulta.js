@@ -13,7 +13,7 @@ export default function Consulta(){
 
     return(
         <div className="d-flex flex-wrap  ">
-            <h1>Consulta de produtos</h1>
+            
             {
                 produtos.map(prod => <CardProduto produto={prod}/>)
             }
